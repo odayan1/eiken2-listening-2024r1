@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>英検2級 リスニングマスター 30問（大村くん専用）｜KATEぷら</title>
+<title>英検2級 リスニングマスター 30問｜KATEぷら</title>
 <style>
 :root{
   --sky:#2fbdea; --green:#8dc63f; --yellow:#f7d000;
@@ -57,6 +57,17 @@ header .sub{font-size:12px; opacity:.85; margin-top:2px;}
 .feedback.ng{color:var(--ng);}
 .expl{background:#f4f8fb; border-radius:12px; padding:12px 14px; font-size:13.5px; line-height:1.7; margin-top:10px;}
 .expl .wana-title{font-weight:bold; color:var(--ng); margin-bottom:3px;}
+.replay{margin-top:12px; background:#eef7fc; border:1.5px solid #b9e0f2; border-radius:12px; padding:12px 14px;}
+.replay-head{font-weight:bold; font-size:14px; color:#1f7a9c; margin-bottom:8px;}
+.replay-full{display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:12px; border:none; border-radius:10px; background:linear-gradient(135deg,var(--sky),#1fa9d6); color:#fff; font-size:15px; font-weight:bold; cursor:pointer; margin-bottom:10px;}
+.replay-sub{font-size:12px; color:#5a7484; margin-bottom:8px;}
+.seg-row{display:flex; align-items:flex-start; gap:8px; padding:6px 0; border-top:1px dashed #cfe6f2;}
+.seg-play{flex:0 0 auto; width:34px; height:34px; border:none; border-radius:50%; background:#2fbdea; color:#fff; font-size:14px; cursor:pointer;}
+.seg-play.playing{background:#1f7a4d;}
+.seg-play:active{transform:scale(.94);}
+.seg-lbl{flex:0 0 auto; font-size:11px; font-weight:bold; color:#fff; border-radius:6px; padding:2px 7px; margin-top:6px;}
+.seg-lbl.m{background:#3a6ea5;} .seg-lbl.w{background:#c2679b;} .seg-lbl.n{background:#7a4dbf;}
+.seg-txt{flex:1; font-size:13px; line-height:1.6; padding-top:4px;}
 .hunter{margin-top:14px;}
 .hunter-head{font-weight:bold; font-size:14px; margin-bottom:4px; color:var(--purple);}
 .hunter-sub{font-size:12px; color:#7b93a0; margin-bottom:10px; line-height:1.6;}
@@ -101,7 +112,7 @@ footer{text-align:center; font-size:11px; color:#9ab0bc; padding:14px 16px 30px;
   <div class="wrap" style="padding:0;">
     <div class="brand">KATEぷら｜つまずきを、プラスに。</div>
     <h1>🎧 英検2級 リスニングマスター 30問</h1>
-    <div class="sub">大村くん専用・全30問（第1部15問＋第2部15問）／英文・音声はすべてオリジナル</div>
+    <div class="sub">2024年度第1回の出題形式をベースにしたオリジナル30問（第1部15問＋第2部15問）／英文・音声はすべてオリジナル</div>
   </div>
 </header>
 
@@ -154,6 +165,14 @@ footer{text-align:center; font-size:11px; color:#9ab0bc; padding:14px 16px 30px;
 
       <div id="feedback-area" class="hidden">
         <div class="feedback" id="feedback-label"></div>
+
+        <div class="replay" id="replay-area">
+          <div class="replay-head">🔁 もう一度聞く（何度でもOK）</div>
+          <button class="replay-full" id="replay-full-btn">▶ 全文をもう一度再生</button>
+          <div class="replay-sub" id="replay-sub"></div>
+          <div id="seg-list"></div>
+        </div>
+
         <div class="expl" id="expl-box"></div>
         <div class="tora" id="tora-box"></div>
 
@@ -208,7 +227,7 @@ footer{text-align:center; font-size:11px; color:#9ab0bc; padding:14px 16px 30px;
 </div>
 
 <footer>
-  KATEぷら 英検2級 リスニングマスター 30問（大村くん専用）<br>
+  KATEぷら 英検2級 リスニングマスター 30問｜2024年度第1回の出題形式をベースにした演習版<br>
   本アプリの英文・設問・音声はすべてオリジナルです（実際の検定問題ではありません）
 </footer>
 
@@ -767,6 +786,25 @@ const ITEMS = [
   }
 ];
 
+// 第2部の文リスト（一文ずつ再生用。音声ファイル audio/q{id}_s{n}.mp3 に対応）
+const P2_SENTENCES = {
+  q16:["In a small fishing village in the Philippines, many young people love basketball.","They used to play on the sand, but they could not play when the tide came in.","To solve this problem, the villagers built a floating court on the water.","Soon, the court became well known, and visitors traveled from distant towns to see it."],
+  q17:["Grace planned to go hiking in the mountains this weekend with her club.","She bought new boots and packed her bag the night before.","However, on Saturday morning, heavy rain began to fall, so the club decided to visit a museum in the city instead.","Grace was a little disappointed, but she still enjoyed the day."],
+  q18:["Leo wanted to buy a birthday present for his sister.","He first thought about a book, but she already had many.","He then considered a scarf, but he did not know her favorite color.","In the end, he decided to give her a gift card so that she could choose something herself."],
+  q19:["Diana had to give a speech at a conference, but she felt nervous.","She wrote her notes and practiced at home.","A colleague who often speaks at events wanted to help.","He told her to think about the questions the audience might have and prepare answers in advance.","Now, Diana feels more confident about her speech."],
+  q20:["When Hannah was young, she was afraid of speaking in front of people.","In high school, she joined a drama club to challenge herself, and she practiced on stage every week.","Now, she works as a tour guide and speaks to large groups every day without any fear."],
+  q21:["The city library will hold a special book sale next Saturday.","To enter the sale, visitors must first get a free ticket at the front desk.","Once inside, people can buy used books for one dollar each.","Any books left at the end of the day will be donated to local schools."],
+  q22:["Nathan went on a trip with his friends.","He wanted to eat dinner at the finest restaurants while traveling, so he made reservations months in advance.","His friends wanted to eat at small, cheap restaurants.","Nathan and his friends had breakfast at the hotel and spent the day visiting famous places.","After having dinner separately, they went to see a show together."],
+  q23:["Because of construction, Maple Avenue will be closed all weekend.","The sidewalks will be closed as well, so please avoid the area.","To reach Riverside Park, please take the subway, which will run all weekend.","You can rent bicycles at the park, so feel free to enjoy the bike paths there."],
+  q24:["Olivia wanted to find a new job.","She looked at job ads online and saw an opening at a small design company.","Olivia sent her résumé to the company last week.","Yesterday, she had an interview.","The interview went well, so she hopes to start her new job next month."],
+  q25:["The Parker family spent Sunday at the amusement park.","In the morning, the parents and their two children rode the roller coaster together.","At lunchtime, they all shared a big pizza.","In the afternoon, however, only the father tried the tallest ride, while the others watched from below."],
+  q26:["Kevin wanted to improve his cooking.","At first, his dishes often turned out too salty.","He started following recipes carefully and measuring every ingredient.","He also watched cooking videos every weekend.","Now, his friends say his meals taste as good as those in a restaurant."],
+  q27:["Ethan has an important test in two weeks.","He wants to study in the evenings, but the library closes before he finishes work.","His apartment is also very noisy.","So Ethan's friend has invited him to come over and study at her place every evening until the test is over."],
+  q28:["Sophia wants to take a swimming class with her friends, but her friends are in the advanced group, and Sophia is a beginner.","The advanced class meets on Thursday evenings.","The beginner class meets on Sunday mornings.","Sophia decided to take the beginner class now so that she can take the advanced class with her friends next year."],
+  q29:["Long ago, people believed that the kakapo, a parrot from New Zealand, had died out.","However, a few of these birds were discovered in the 1970s.","Now, their numbers are slowly increasing.","Because the kakapo cannot fly, many other animals hunt them, so some are kept in protected areas.","Eventually, people hope to return the kakapo to more places in the wild."],
+  q30:["Marcus received some old stamps from his grandmother.","He looked online and learned that some of them were very valuable.","A collector offered him a good price for the stamps.","Marcus thought about selling them to help buy a motorcycle.","However, the stamps reminded him of his grandmother, so he put them in a frame and hung it on his wall."]
+};
+
 // ============ 状態 ============
 let SET = [];
 let qIndex = 0, score = 0, streak = 0, answered = false, timerId = null, audioObj = null, audioPlayed = false;
@@ -798,6 +836,64 @@ const revealBtn = document.getElementById("reveal-btn");
 const signNotes = document.getElementById("sign-notes");
 const nextBtn = document.getElementById("next-btn");
 const prereadHint = document.getElementById("preread-hint");
+const replayFullBtn = document.getElementById("replay-full-btn");
+const replaySub = document.getElementById("replay-sub");
+const segList = document.getElementById("seg-list");
+
+// ============ もう一度聞く（全文＋一文ずつ） ============
+let replayAudio = null;
+function stopReplay(){ if(replayAudio){ replayAudio.pause(); replayAudio = null; } }
+function playFile(src, fallbackSrc, btn){
+  stopReplay();
+  document.querySelectorAll(".seg-play.playing, .replay-full.playing").forEach(b=>b.classList.remove("playing"));
+  let fellBack = false;
+  const a = new Audio(src);
+  replayAudio = a;
+  if(btn){ btn.classList.add("playing"); a.addEventListener("ended",()=>btn.classList.remove("playing")); a.addEventListener("pause",()=>btn.classList.remove("playing")); }
+  a.addEventListener("error", () => {
+    if(fallbackSrc && !fellBack){ fellBack = true; playFile(fallbackSrc, null, btn); }
+  });
+  const p = a.play();
+  if(p && p.catch) p.catch(() => { if(fallbackSrc && !fellBack){ fellBack = true; playFile(fallbackSrc, null, btn); } });
+}
+
+function segText(line){ return line.seg.map(s=>s.t).join("").trim(); }
+
+function renderReplay(item){
+  replayFullBtn.classList.remove("playing");
+  replayFullBtn.onclick = () => playFile(item.audio, null, replayFullBtn);
+  segList.innerHTML = "";
+  let rows = [];
+  if(item.part === 1){
+    rows = item.script.map((line, i) => ({
+      cls: line.sp === "M" ? "m" : "w",
+      label: line.sp === "M" ? "男" : "女",
+      text: segText(line),
+      file: `audio/${item.id}_s${i+1}.mp3`
+    }));
+    replaySub.textContent = "発話ごとに聞く（▶をタップ）";
+  } else {
+    const sents = P2_SENTENCES[item.id] || [];
+    rows = sents.map((t, i) => ({ cls:"n", label:String(i+1), text:t, file:`audio/${item.id}_s${i+1}.mp3` }));
+    replaySub.textContent = "一文ずつ聞く（▶をタップ）";
+  }
+  rows.forEach(r => {
+    const row = document.createElement("div");
+    row.className = "seg-row";
+    const pb = document.createElement("button");
+    pb.className = "seg-play";
+    pb.textContent = "▶";
+    pb.addEventListener("click", () => playFile(r.file, item.audio, pb));
+    const lb = document.createElement("span");
+    lb.className = "seg-lbl " + r.cls;
+    lb.textContent = r.label;
+    const tx = document.createElement("span");
+    tx.className = "seg-txt";
+    tx.textContent = r.text;
+    row.appendChild(pb); row.appendChild(lb); row.appendChild(tx);
+    segList.appendChild(row);
+  });
+}
 
 // ============ 進捗ドット ============
 function renderDots(){
@@ -923,6 +1019,7 @@ function answer(sel){
   qText.classList.remove("hidden");
   explBox.innerHTML = `<div class="wana-title">🎣 ひっかけの正体</div>${item.wana}`;
   toraBox.innerHTML = `<div class="tora-title">📜 虎の巻ポイント</div>${item.tora}`;
+  renderReplay(item);
   renderHunter(item);
   feedbackArea.classList.remove("hidden");
   renderDots();
@@ -1037,6 +1134,7 @@ document.querySelectorAll(".partbtn").forEach(btn => {
 
 nextBtn.addEventListener("click", () => {
   if(audioObj){ audioObj.pause(); audioObj = null; }
+  stopReplay();
   if(qIndex === SET.length - 1){
     showResult();
   } else {
