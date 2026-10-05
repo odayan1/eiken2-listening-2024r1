@@ -268,12 +268,12 @@ const ITEMS = [
     choices:["The soup","The crispy dumplings","The rice","The ginger sauce"],
     ans:1,
     script:[
-      {sp:"M", seg:[{t:"That dinner you cooked last night was amazing."}]},
-      {sp:"W", seg:[{t:"Thanks. I made the soup using fresh mushrooms from the market."}]},
+      {sp:"M", seg:[{t:"That dinner you cooked last night was "}, {t:"amazing", sign:{k:"vocab", label:"amazing", note:"amazing＝すごい、すばらしい"}}, {t:"."}]},
+      {sp:"W", seg:[{t:"Thanks. I made the soup using fresh "}, {t:"mushrooms", sign:{k:"vocab", label:"mushrooms", note:"mushrooms＝きのこ"}}, {t:" from the market."}]},
       {sp:"M", seg:[
         {t:"I really "},
         {t:"loved the", sign:{k:"link", label:"loved the", note:"d+th がつながって「ラヴザ」のように聞こえる。ここで男性が好きだったもの＝crispy dumplingsを聞き取る。"}},
-        {t:" crispy dumplings. "},
+        {t:" "}, {t:"crispy", sign:{k:"vocab", label:"crispy", note:"crispy＝パリパリした"}}, {t:" "}, {t:"dumplings", sign:{k:"vocab", label:"dumplings", note:"dumplings＝ダンプリング（団子状の料理）"}}, {t:". "},
         {t:"Did you", sign:{k:"link", label:"Did you", note:"「ディジュー／didja」と一体化する英検頻出パターン。"}},
         {t:" add any ginger?"}
       ]},
@@ -288,14 +288,14 @@ const ITEMS = [
     choices:["The new teacher turned out to be a woman","The new teacher is a man","The teacher quit today","The principal is new"],
     ans:0,
     script:[
-      {sp:"W", seg:[{t:"Hey, Ryan, who's that woman speaking with the principal?"}]},
+      {sp:"W", seg:[{t:"Hey, Ryan, who's that woman speaking with the "}, {t:"principal", sign:{k:"vocab", label:"principal", note:"principal＝校長"}}, {t:"?"}]},
       {sp:"M", seg:[{t:"Oh, hi, Emma. That's Ms. Carter, the new science teacher. She starts today."}]},
       {sp:"W", seg:[
         {t:"Really? I heard the new teacher was "},
         {t:"supposed to", sign:{k:"link", label:"supposed to", note:"「サポウストゥ」のように d がほぼ消える。会話の前提（男性のはずだった→実際は女性）が入れ替わる。"}},
         {t:" be a man."}
       ]},
-      {sp:"M", seg:[{t:"Yeah, but he took a job at another school instead."}]}
+      {sp:"M", seg:[{t:"Yeah, but he took a job at another school "}, {t:"instead", sign:{k:"vocab", label:"instead", note:"instead＝その代わりに"}}, {t:"."}]}
     ],
     wana:"「男性のはずだった」という思い込みが覆り、実際の新任は女性（Ms. Carter）。誰が何を「思っていた」かを整理して聞く。",
     tora:"虎の巻：\"supposed to\" は d が消える。前提が入れ替わる問題は「思っていた事」と「実際」を分けて聞く。"
@@ -307,12 +307,12 @@ const ITEMS = [
     ans:0,
     script:[
       {sp:"W", seg:[
-        {t:"Hi, honey. I stopped by the antique shop downtown, and I "},
+        {t:"Hi, honey. I stopped by the "}, {t:"antique", sign:{k:"vocab", label:"antique", note:"antique＝骨董品、アンティークの"}}, {t:" shop downtown, and I "},
         {t:"found something I", sign:{k:"link", label:"found something I", note:"d と s、そして I が続けて発音され、ひとまとまりに聞こえる。"}},
         {t:" wanted to buy."}
       ]},
       {sp:"M", seg:[{t:"Oh, really? What is it?"}]},
-      {sp:"W", seg:[{t:"An old clock made by a German craftsman. It's a little expensive, though, so I wanted to talk to you about it."}]},
+      {sp:"W", seg:[{t:"An old clock made by a German "}, {t:"craftsman", sign:{k:"vocab", label:"craftsman", note:"craftsman＝職人"}}, {t:". It's a little expensive, though, so I wanted to talk to you about it."}]},
       {sp:"M", seg:[
         {t:"OK. Let's decide if we "},
         {t:"want to", sign:{k:"link", label:"want to", note:"\"wanna\" のようにくだけて聞こえる。ここは「買うか話し合う」であって「買うと決めた」わけではない。"}},
@@ -328,13 +328,13 @@ const ITEMS = [
     choices:["Flowers","Herbs","Strawberries","Tomatoes"],
     ans:2,
     script:[
-      {sp:"M", seg:[{t:"Welcome to Greenfield Nursery. Can I help you find something today?"}]},
+      {sp:"M", seg:[{t:"Welcome to Greenfield "}, {t:"Nursery", sign:{k:"vocab", label:"Nursery", note:"nursery＝苗木店、園芸店"}}, {t:". Can I help you find something today?"}]},
       {sp:"W", seg:[
         {t:"Yes. I've never grown fruit before, but I'm "},
         {t:"thinking of", sign:{k:"link", label:"thinking of", note:"of は弱形で「シンキノヴ」に近い。"}},
         {t:" planting something this spring."}
       ]},
-      {sp:"M", seg:[{t:"OK. I'll show you where we keep the seeds and tools. Do you know what you want to grow yet?"}]},
+      {sp:"M", seg:[{t:"OK. I'll show you where we keep the "}, {t:"seeds", sign:{k:"vocab", label:"seeds", note:"seeds＝種"}}, {t:" and tools. Do you know what you want to grow yet?"}]},
       {sp:"W", seg:[
         {t:"I haven't decided on everything, but I "},
         {t:"definitely want to", sign:{k:"link", label:"definitely want to", note:"want to が \"wanna\" 化。具体的な答え（strawberries）はここだけに出る。"}},
@@ -355,8 +355,8 @@ const ITEMS = [
         {t:"any you", sign:{k:"link", label:"any you", note:"y の音が連結して「エニュー」のように聞こえる。"}},
         {t:" especially liked?"}
       ]},
-      {sp:"M", seg:[{t:"I thought the one on Maple Street was the best, but it's rather expensive."}]},
-      {sp:"W", seg:[{t:"I know. But the location is fantastic, and it's really bright. Maybe we should spend a little more and get it."}]},
+      {sp:"M", seg:[{t:"I thought the one on Maple Street was the best, but it's "}, {t:"rather", sign:{k:"vocab", label:"rather", note:"rather＝かなり、むしろ"}}, {t:" expensive."}]},
+      {sp:"W", seg:[{t:"I know. But the location is "}, {t:"fantastic", sign:{k:"vocab", label:"fantastic", note:"fantastic＝すばらしい"}}, {t:", and it's really bright. Maybe we should spend a little more and get it."}]},
       {sp:"M", seg:[{t:"Well, let's talk to the people at the bank again and then decide."}]}
     ],
     wana:"expensive＝欠点。location と bright が長所として2つ出る。質問は「長所の1つ」なので両方覚えて選択肢と照合。",
@@ -368,9 +368,9 @@ const ITEMS = [
     choices:["Made delicious stew","Built a snowman","Made a campfire","Complained about the snow"],
     ans:0,
     script:[
-      {sp:"M", seg:[{t:"It's too bad that it snowed so much during our cabin trip."}]},
-      {sp:"W", seg:[{t:"It's still been fun. I enjoyed doing puzzles by the fireplace yesterday."}]},
-      {sp:"M", seg:[{t:"Yeah, and I still built a snowman, even though it was freezing."}]},
+      {sp:"M", seg:[{t:"It's too bad that it snowed so much during our "}, {t:"cabin", sign:{k:"vocab", label:"cabin", note:"cabin＝山小屋"}}, {t:" trip."}]},
+      {sp:"W", seg:[{t:"It's still been fun. I enjoyed doing puzzles by the "}, {t:"fireplace", sign:{k:"vocab", label:"fireplace", note:"fireplace＝暖炉"}}, {t:" yesterday."}]},
+      {sp:"M", seg:[{t:"Yeah, and I still built a snowman, even though it was "}, {t:"freezing", sign:{k:"vocab", label:"freezing", note:"freezing＝凍えるほど寒い"}}, {t:"."}]},
       {sp:"W", seg:[
         {t:"And I "},
         {t:"made some", sign:{k:"link", label:"made some", note:"「メイドサム」のように連結。"}},
@@ -396,7 +396,7 @@ const ITEMS = [
       {sp:"M", seg:[
         {t:"Yeah. I'll have to start over. Luckily, we still "},
         {t:"have enough", sign:{k:"link", label:"have enough", note:"v+e がつながって聞こえる。「十分ある」＝not run out。"}},
-        {t:" flour and butter for another batch."}
+        {t:" "}, {t:"flour", sign:{k:"vocab", label:"flour", note:"flour＝小麦粉"}}, {t:" and butter for another "}, {t:"batch", sign:{k:"vocab", label:"batch", note:"batch＝（一度に作る）1回分"}}, {t:"."}
       ]}
     ],
     wana:"「小麦粉を切らした」は本文と逆（まだ十分ある）のひっかけ。否定・肯定の逆転に注意。",
@@ -412,9 +412,9 @@ const ITEMS = [
       {sp:"M", seg:[
         {t:"I'd "},
         {t:"like to", sign:{k:"link", label:"like to", note:"k+t が連結。"}},
-        {t:" take the evening river cruise tonight. It'll be three friends and me."}
+        {t:" take the evening river "}, {t:"cruise", sign:{k:"vocab", label:"cruise", note:"cruise＝クルーズ、遊覧船の旅"}}, {t:" tonight. It'll be three friends and me."}
       ]},
-      {sp:"W", seg:[{t:"I'm sorry, sir, but we're fully booked tonight. We do have space tomorrow, though."}]},
+      {sp:"W", seg:[{t:"I'm sorry, sir, but we're "}, {t:"fully booked", sign:{k:"vocab", label:"fully booked", note:"fully booked＝満席、予約で一杯"}}, {t:" tonight. We do have space tomorrow, though."}]},
       {sp:"M", seg:[
         {t:"That's no good. We'll be leaving for another town "},
         {t:"in the morning", sign:{k:"shift", label:"in the morning", note:"時間の切り替えサイン。今夜→明日→明日の朝、と3つの時点が出る。"}},
@@ -433,7 +433,7 @@ const ITEMS = [
       {sp:"M", seg:[
         {t:"", },
         {t:"What is", sign:{k:"link", label:"What is", note:"\"What's\" と縮約される。"}},
-        {t:" this charge on our credit card from Brighton Electronics?"}
+        {t:" this "}, {t:"charge", sign:{k:"vocab", label:"charge", note:"charge＝請求金額"}}, {t:" on our credit card from Brighton Electronics?"}
       ]},
       {sp:"W", seg:[{t:"Oh, that's for the new speaker in the living room."}]},
       {sp:"M", seg:[{t:"This is the cost of one speaker? Wow! The price is so low. I wish we had bought more!"}]},
@@ -449,11 +449,11 @@ const ITEMS = [
     ans:1,
     script:[
       {sp:"W", seg:[
-        {t:"We need a new refrigerator. Every time I use ours, I worry it's "},
+        {t:"We need a new "}, {t:"refrigerator", sign:{k:"vocab", label:"refrigerator", note:"refrigerator＝冷蔵庫"}}, {t:". Every time I use ours, I worry it's "},
         {t:"going to", sign:{k:"link", label:"going to", note:"\"gonna\" と発音される。"}},
         {t:" stop working."}
       ]},
-      {sp:"M", seg:[{t:"I know, but shopping for appliances is difficult. There are so many to choose from."}]},
+      {sp:"M", seg:[{t:"I know, but shopping for "}, {t:"appliances", sign:{k:"vocab", label:"appliances", note:"appliances＝家電製品"}}, {t:" is difficult. There are so many to choose from."}]},
       {sp:"W", seg:[{t:"Let's look at some online stores to see if we find anything we like."}]},
       {sp:"M", seg:[{t:"That's a good idea. We can start right now."}]}
     ],
@@ -466,8 +466,8 @@ const ITEMS = [
     choices:["It was too expensive","It had too few colors","The store was closed","She wanted a wooden box"],
     ans:0,
     script:[
-      {sp:"W", seg:[{t:"Excuse me. I need some paint for an art class. It's a big landscape, so I need a lot of colors."}]},
-      {sp:"M", seg:[{t:"We have a deluxe set of sixty colors in a wooden box. It's ninety dollars."}]},
+      {sp:"W", seg:[{t:"Excuse me. I need some paint for an art class. It's a big "}, {t:"landscape", sign:{k:"vocab", label:"landscape", note:"landscape＝風景画"}}, {t:", so I need a lot of colors."}]},
+      {sp:"M", seg:[{t:"We have a "}, {t:"deluxe", sign:{k:"vocab", label:"deluxe", note:"deluxe＝高級な、豪華な"}}, {t:" set of sixty colors in a wooden box. It's ninety dollars."}]},
       {sp:"W", seg:[
         {t:"That's a bit expensive. "},
         {t:"Do you", sign:{k:"link", label:"Do you", note:"「デュー」に近く聞こえる。"}},
@@ -484,7 +484,7 @@ const ITEMS = [
     choices:["Make a new schedule","Have dinner with her children","Meet the team leader","Work late"],
     ans:1,
     script:[
-      {sp:"W", seg:[{t:"Who set up the plan for this event? It's very detailed and accurate."}]},
+      {sp:"W", seg:[{t:"Who set up the plan for this event? It's very "}, {t:"detailed", sign:{k:"vocab", label:"detailed", note:"detailed＝詳細な"}}, {t:" and "}, {t:"accurate", sign:{k:"vocab", label:"accurate", note:"accurate＝正確な"}}, {t:"."}]},
       {sp:"M", seg:[{t:"I think the team leader did it. She works very hard for us."}]},
       {sp:"W", seg:[
         {t:"It says I can "},
@@ -502,7 +502,7 @@ const ITEMS = [
     choices:["Going on Sunday as planned","Visiting on a different day","Canceling the visit","Meeting the baby later"],
     ans:1,
     script:[
-      {sp:"M", seg:[{t:"Our friends invited us to have lunch at their house on Sunday. What should I tell them?"}]},
+      {sp:"M", seg:[{t:"Our friends "}, {t:"invited", sign:{k:"vocab", label:"invited", note:"invited＝招待した"}}, {t:" us to have lunch at their house on Sunday. What should I tell them?"}]},
       {sp:"W", seg:[{t:"Hmm. They make really good food, but I have to work on Sunday."}]},
       {sp:"M", seg:[
         {t:"They're such nice people. I don't want to make them feel bad. Plus, they "},
@@ -528,7 +528,7 @@ const ITEMS = [
       {sp:"W", seg:[
         {t:"Yeah, I have to work a little late tonight. "},
         {t:"Can you", sign:{k:"link", label:"Can you", note:"「ケニュー」。"}},
-        {t:" change our reservation from seven p.m. to nine p.m.?"}
+        {t:" change our "}, {t:"reservation", sign:{k:"vocab", label:"reservation", note:"reservation＝予約"}}, {t:" from seven p.m. to nine p.m.?"}
       ]},
       {sp:"M", seg:[{t:"I can try. The restaurant is busy on weekends. They might not be able to do it."}]},
       {sp:"W", seg:[{t:"Please see what you can do. Call and let me know what happens."}]}
@@ -543,8 +543,8 @@ const ITEMS = [
     ans:1,
     script:[
       {sp:"W", seg:[{t:"Did you find someone to take care of the cat while we're on our trip?"}]},
-      {sp:"M", seg:[{t:"Oh no! Tom was checking his schedule, but I never called him back."}]},
-      {sp:"W", seg:[{t:"We're leaving in just a few days! Tom travels for work a lot—he might not be available."}]},
+      {sp:"M", seg:[{t:"Oh no! Tom was checking his "}, {t:"schedule", sign:{k:"vocab", label:"schedule", note:"schedule＝予定、スケジュール"}}, {t:", but I never called him back."}]},
+      {sp:"W", seg:[{t:"We're leaving in just a few days! Tom travels for work a lot—he might not be "}, {t:"available", sign:{k:"vocab", label:"available", note:"available＝都合がつく、対応できる"}}, {t:"."}]},
       {sp:"M", seg:[
         {t:"I'll ask my brother. Don't worry. I'll "},
         {t:"find someone", sign:{k:"link", label:"find someone", note:"「ファインサムワン」のように連結。"}},
@@ -563,13 +563,13 @@ const ITEMS = [
     ans:1,
     script:[
       {sp:null, seg:[
-        {t:"In a small fishing village in the Philippines, many young people love basketball. They used to play on the sand, "},
+        {t:"In a small fishing "}, {t:"village", sign:{k:"vocab", label:"village", note:"village＝村"}}, {t:" in the Philippines, many young people love basketball. They used to play on the sand, "},
         {t:"but", sign:{k:"shift", label:"but", note:"逆接。ここで「潮が満ちると遊べない」という問題が示される。"}},
         {t:" they could not play when the "},
-        {t:"tide", sign:{k:"vocab", label:"tide", note:"tide（潮）＝海・浜辺の頻出語。"}},
-        {t:" came in. To solve this problem, the villagers built a floating court on the water. "},
+        {t:"tide", sign:{k:"vocab", label:"tide", note:"tide＝潮"}},
+        {t:" came in. To solve this problem, the villagers built a "}, {t:"floating", sign:{k:"vocab", label:"floating", note:"floating＝浮いている"}}, {t:" court on the water. "},
         {t:"Soon,", sign:{k:"shift", label:"Soon,", note:"「その後」＝結果への切り替えサイン。質問はこの後の内容を問う。"}},
-        {t:" the court became well known, and visitors traveled from distant towns to see it."}
+        {t:" the court became well known, and visitors traveled from "}, {t:"distant", sign:{k:"vocab", label:"distant", note:"distant＝遠く離れた"}}, {t:" towns to see it."}
       ]}
     ],
     wana:"質問は「コート建設の後」＝有名になり遠方から人が来た。過去（不便）→解決→その後の結果、の流れを整理。",
@@ -582,7 +582,7 @@ const ITEMS = [
     ans:1,
     script:[
       {sp:null, seg:[
-        {t:"Grace planned to go hiking in the mountains this weekend with her club. She bought new boots and packed her bag the night before. "},
+        {t:"Grace "}, {t:"planned", sign:{k:"vocab", label:"planned", note:"planned＝計画した"}}, {t:" to go hiking in the mountains this weekend with her club. She bought new boots and "}, {t:"packed", sign:{k:"vocab", label:"packed", note:"packed＝（荷物を）まとめた"}}, {t:" her bag the night before. "},
         {t:"However,", sign:{k:"shift", label:"However,", note:"計画が変わる合図。直後に理由（雨）が来る。"}},
         {t:" on Saturday morning, heavy rain began to fall, so the club decided to visit a museum in the city "},
         {t:"instead", sign:{k:"shift", label:"instead", note:"「代わりに」＝ハイキングではなく美術館へ。"}},
@@ -601,7 +601,7 @@ const ITEMS = [
       {sp:null, seg:[
         {t:"Leo wanted to buy a birthday present for his sister. He first thought about a book, "},
         {t:"but", sign:{k:"shift", label:"but", note:"1つ目の候補（本）がダメな理由が続く。"}},
-        {t:" she already had many. He then considered a scarf, "},
+        {t:" she already had many. He then "}, {t:"considered", sign:{k:"vocab", label:"considered", note:"considered＝検討した"}}, {t:" a "}, {t:"scarf", sign:{k:"vocab", label:"scarf", note:"scarf＝スカーフ、マフラー"}}, {t:", "},
         {t:"but", sign:{k:"shift", label:"but", note:"2つ目の候補（スカーフ）もダメな理由が続く。"}},
         {t:" he did not know her favorite color. "},
         {t:"In the end,", sign:{k:"shift", label:"In the end,", note:"「最終的に」＝結論への切り替え。ここが答え。"}},
@@ -618,9 +618,9 @@ const ITEMS = [
     ans:1,
     script:[
       {sp:null, seg:[
-        {t:"Diana had to give a speech at a conference, but she felt nervous. She wrote her notes and practiced at home. A colleague who often speaks at events wanted to help. He told her to think about the questions the audience might have and prepare answers in advance. "},
+        {t:"Diana had to give a speech at a "}, {t:"conference", sign:{k:"vocab", label:"conference", note:"conference＝会議"}}, {t:", but she felt "}, {t:"nervous", sign:{k:"vocab", label:"nervous", note:"nervous＝緊張した"}}, {t:". She wrote her notes and practiced at home. A "}, {t:"colleague", sign:{k:"vocab", label:"colleague", note:"colleague＝同僚"}}, {t:" who often speaks at events wanted to help. He told her to think about the questions the audience might have and prepare answers in advance. "},
         {t:"Now,", sign:{k:"shift", label:"Now,", note:"「現在の気持ち」への切り替え。これは結果であって助言の中身ではない。"}},
-        {t:" Diana feels more confident about her speech."}
+        {t:" Diana feels more "}, {t:"confident", sign:{k:"vocab", label:"confident", note:"confident＝自信がある"}}, {t:" about her speech."}
       ]}
     ],
     wana:"Now は「助言を受けた後の自信」＝結果。質問は助言の中身＝聴衆の質問を予想して答えを準備すること。",
@@ -633,9 +633,9 @@ const ITEMS = [
     ans:1,
     script:[
       {sp:null, seg:[
-        {t:"When Hannah was young, she was afraid of speaking in front of people. "},
+        {t:"When Hannah was young, she was "}, {t:"afraid", sign:{k:"vocab", label:"afraid", note:"afraid＝怖い、恐れている"}}, {t:" of speaking in front of people. "},
         {t:"In high school,", sign:{k:"shift", label:"In high school,", note:"時期の切り替え。挑戦を始めた時点。"}},
-        {t:" she joined a drama club to challenge herself, and she practiced on stage every week. "},
+        {t:" she joined a drama club to "}, {t:"challenge", sign:{k:"vocab", label:"challenge", note:"challenge＝挑戦する"}}, {t:" herself, and she practiced on stage every week. "},
         {t:"Now,", sign:{k:"shift", label:"Now,", note:"「現在」への切り替え。質問は now を問うのでこの後が答え。"}},
         {t:" she works as a tour guide and speaks to large groups every day without any fear."}
       ]}
@@ -652,9 +652,9 @@ const ITEMS = [
       {sp:null, seg:[
         {t:"The city library will hold a special book sale next Saturday. "},
         {t:"To enter the sale,", sign:{k:"shift", label:"To enter the sale,", note:"「入場するには」＝最初の手段の合図。"}},
-        {t:" visitors must first get a free ticket at the front desk. "},
+        {t:" visitors must first get a free ticket at the "}, {t:"front desk", sign:{k:"vocab", label:"front desk", note:"front desk＝受付"}}, {t:". "},
         {t:"Once inside,", sign:{k:"shift", label:"Once inside,", note:"「中に入ったら」＝次の段階への切り替え。"}},
-        {t:" people can buy used books for one dollar each. Any books left at the end of the day will be donated to local schools."}
+        {t:" people can buy used books for one dollar each. Any books left at the end of the day will be "}, {t:"donated", sign:{k:"vocab", label:"donated", note:"donated＝寄付された"}}, {t:" to local schools."}
       ]}
     ],
     wana:"2段階。まず受付で無料チケット→中に入って1ドルで購入。寄付は一日の終わりの話。質問は「まず何をするか」。",
@@ -667,7 +667,7 @@ const ITEMS = [
     ans:2,
     script:[
       {sp:null, seg:[
-        {t:"Nathan went on a trip with his friends. He wanted to eat dinner at the finest restaurants while traveling, so he made reservations months in advance. His friends wanted to eat at small, cheap restaurants. Nathan and his friends had breakfast at the hotel and spent the day visiting famous places. "},
+        {t:"Nathan went on a trip with his friends. He wanted to eat dinner at the "}, {t:"finest", sign:{k:"vocab", label:"finest", note:"finest＝最高級の"}}, {t:" restaurants while traveling, so he made reservations months "}, {t:"in advance", sign:{k:"vocab", label:"in advance", note:"in advance＝前もって、事前に"}}, {t:". His friends wanted to eat at small, cheap restaurants. Nathan and his friends had breakfast at the hotel and spent the day visiting famous places. "},
         {t:"After having dinner separately,", sign:{k:"shift", label:"After having dinner separately,", note:"after＋separately＝夕食だけ別行動、の合図。"}},
         {t:" they went to see a show together."}
       ]}
@@ -682,7 +682,7 @@ const ITEMS = [
     ans:1,
     script:[
       {sp:null, seg:[
-        {t:"Because of construction, Maple Avenue will be closed all weekend. The sidewalks will be closed as well, so please avoid the area. "},
+        {t:"Because of "}, {t:"construction", sign:{k:"vocab", label:"construction", note:"construction＝工事"}}, {t:", Maple Avenue will be closed all weekend. The sidewalks will be closed as well, so please "}, {t:"avoid", sign:{k:"vocab", label:"avoid", note:"avoid＝避ける"}}, {t:" the area. "},
         {t:"To reach Riverside Park,", sign:{k:"shift", label:"To reach Riverside Park,", note:"「公園に行くには」＝行き方の合図。"}},
         {t:" please take the subway, which will run all weekend. You can rent bicycles at the park, so feel free to enjoy the bike paths there."}
       ]}
@@ -697,7 +697,7 @@ const ITEMS = [
     ans:1,
     script:[
       {sp:null, seg:[
-        {t:"Olivia wanted to find a new job. She looked at job ads online and saw an opening at a small design company. Olivia sent her résumé to the company "},
+        {t:"Olivia wanted to find a new job. She looked at job ads online and saw an "}, {t:"opening", sign:{k:"vocab", label:"opening", note:"opening＝（職の）空き、欠員"}}, {t:" at a small design company. Olivia sent her "}, {t:"résumé", sign:{k:"vocab", label:"résumé", note:"résumé＝履歴書"}}, {t:" to the company "},
         {t:"last week.", sign:{k:"shift", label:"last week.", note:"「先週」＝履歴書を送った時点。"}},
         {t:" "},
         {t:"Yesterday,", sign:{k:"shift", label:"Yesterday,", note:"「昨日」＝面接を受けた時点。質問はここ。"}},
@@ -715,11 +715,11 @@ const ITEMS = [
     ans:2,
     script:[
       {sp:null, seg:[
-        {t:"The Parker family spent Sunday at the amusement park. "},
+        {t:"The Parker family spent Sunday at the "}, {t:"amusement park", sign:{k:"vocab", label:"amusement park", note:"amusement park＝遊園地"}}, {t:". "},
         {t:"In the morning,", sign:{k:"shift", label:"In the morning,", note:"時間の切り替え。この時は全員一緒。"}},
         {t:" the parents and their two children rode the roller coaster together. At lunchtime, they all shared a big pizza. "},
         {t:"In the afternoon, however,", sign:{k:"shift", label:"In the afternoon, however,", note:"however＋時間の切り替え。ここから父だけ別行動。"}},
-        {t:" only the father tried the tallest ride, while the others watched from below."}
+        {t:" only the father tried the tallest ride, while the others watched from "}, {t:"below", sign:{k:"vocab", label:"below", note:"below＝下に、下から"}}, {t:"."}
       ]}
     ],
     wana:"朝のジェットコースター・昼のピザは全員一緒。父だけ＝一番高い乗り物（only / however）。",
@@ -734,7 +734,7 @@ const ITEMS = [
       {sp:null, seg:[
         {t:"Kevin wanted to improve his cooking. "},
         {t:"At first,", sign:{k:"shift", label:"At first,", note:"「最初は」＝過去の状態（塩辛すぎた）。"}},
-        {t:" his dishes often turned out too salty. He started following recipes carefully and measuring every ingredient. He also watched cooking videos every weekend. "},
+        {t:" his dishes often turned out too salty. He started following "}, {t:"recipes", sign:{k:"vocab", label:"recipes", note:"recipes＝レシピ、料理の手順"}}, {t:" carefully and measuring every "}, {t:"ingredient", sign:{k:"vocab", label:"ingredient", note:"ingredient＝材料"}}, {t:". He also watched cooking videos every weekend. "},
         {t:"Now,", sign:{k:"shift", label:"Now,", note:"「今は」＝上達した結果。"}},
         {t:" his friends say his meals taste as good as those in a restaurant."}
       ]}
@@ -751,7 +751,7 @@ const ITEMS = [
       {sp:null, seg:[
         {t:"Ethan has an important test in two weeks. He wants to study in the evenings, "},
         {t:"but", sign:{k:"shift", label:"but", note:"逆接。ここから不都合な理由が続く（消去法）。"}},
-        {t:" the library closes before he finishes work. His apartment is also very noisy. So Ethan's friend has invited him to come over and study at her place every evening until the test is over."}
+        {t:" the library closes before he finishes work. His apartment is also very "}, {t:"noisy", sign:{k:"vocab", label:"noisy", note:"noisy＝うるさい"}}, {t:". So Ethan's friend has "}, {t:"invited", sign:{k:"vocab", label:"invited", note:"invited＝招待した、誘った"}}, {t:" him to come over and study at her place every evening until the test is over."}
       ]}
     ],
     wana:"図書館はダメ（閉まる）・自宅もダメ（うるさい）→だから友達の家。消去法の構造。",
@@ -764,7 +764,7 @@ const ITEMS = [
     ans:1,
     script:[
       {sp:null, seg:[
-        {t:"Sophia wants to take a swimming class with her friends, but her friends are in the advanced group, and Sophia is a beginner. The advanced class meets on Thursday evenings. The beginner class meets on Sunday mornings. Sophia decided to take the beginner class "},
+        {t:"Sophia wants to take a swimming class with her friends, but her friends are in the "}, {t:"advanced", sign:{k:"vocab", label:"advanced", note:"advanced＝上級の"}}, {t:" group, and Sophia is a "}, {t:"beginner", sign:{k:"vocab", label:"beginner", note:"beginner＝初心者"}}, {t:". The advanced class meets on Thursday evenings. The beginner class meets on Sunday mornings. Sophia decided to take the beginner class "},
         {t:"now", sign:{k:"shift", label:"now", note:"「今は」初級クラス（友達とは別）。"}},
         {t:" so that she can take the advanced class with her friends "},
         {t:"next year.", sign:{k:"shift", label:"next year.", note:"「来年」＝上級クラスで友達と一緒になる予定。"}}
@@ -781,15 +781,15 @@ const ITEMS = [
     script:[
       {sp:null, seg:[
         {t:"Long ago,", sign:{k:"shift", label:"Long ago,", note:"「昔」＝絶滅したと思われた時点。質問はここ。"}},
-        {t:" people believed that the kakapo, a parrot from New Zealand, had died out. "},
+        {t:" people believed that the kakapo, a "}, {t:"parrot", sign:{k:"vocab", label:"parrot", note:"parrot＝オウム"}}, {t:" from New Zealand, had "}, {t:"died out", sign:{k:"vocab", label:"died out", note:"died out＝絶滅した"}}, {t:". "},
         {t:"However,", sign:{k:"shift", label:"However,", note:"流れが変わる合図。"}},
         {t:" a few of these birds were discovered "},
         {t:"in the 1970s.", sign:{k:"shift", label:"in the 1970s.", note:"「1970年代」＝発見された時点。"}},
         {t:" "},
         {t:"Now,", sign:{k:"shift", label:"Now,", note:"「現在」＝数が増えている。"}},
-        {t:" their numbers are slowly increasing. Because the kakapo cannot fly, many other animals hunt them, so some are kept in protected areas. "},
+        {t:" their numbers are slowly increasing. Because the kakapo cannot fly, many other animals hunt them, so some are kept in "}, {t:"protected areas", sign:{k:"vocab", label:"protected areas", note:"protected areas＝保護区域"}}, {t:". "},
         {t:"Eventually,", sign:{k:"shift", label:"Eventually,", note:"「将来」＝もっと広い場所に戻したい。"}},
-        {t:" people hope to return the kakapo to more places in the wild."}
+        {t:" people hope to return the kakapo to more places in the "}, {t:"wild", sign:{k:"vocab", label:"wild", note:"wild＝野生"}}, {t:"."}
       ]}
     ],
     wana:"昔＝絶滅したと思われた／1970年代＝発見／今＝増加中／将来＝より広い場所へ。質問は「昔の考え」＝絶滅したと思っていた。",
@@ -802,9 +802,9 @@ const ITEMS = [
     ans:2,
     script:[
       {sp:null, seg:[
-        {t:"Marcus received some old stamps from his grandmother. He looked online and learned that some of them were very valuable. A collector offered him a good price for the stamps. Marcus thought about selling them to help buy a motorcycle. "},
+        {t:"Marcus received some old stamps from his grandmother. He looked online and learned that some of them were very "}, {t:"valuable", sign:{k:"vocab", label:"valuable", note:"valuable＝価値が高い"}}, {t:". A "}, {t:"collector", sign:{k:"vocab", label:"collector", note:"collector＝収集家"}}, {t:" offered him a good price for the stamps. Marcus thought about selling them to help buy a motorcycle. "},
         {t:"However,", sign:{k:"shift", label:"However,", note:"「しかし」＝結論への転換。売る気持ちが覆る。"}},
-        {t:" the stamps reminded him of his grandmother, so he put them in a frame and hung it on his wall."}
+        {t:" the stamps "}, {t:"reminded", sign:{k:"vocab", label:"reminded", note:"reminded＝思い出させた"}}, {t:" him of his grandmother, so he put them in a frame and hung it on his wall."}
       ]}
     ],
     wana:"売ろうと思った→However→結局売らずに額に入れて飾った。However の後の結論が答え。",
